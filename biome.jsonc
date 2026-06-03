@@ -1,0 +1,53 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": true,
+		// Generated/committed build output is not ours to format or lint.
+		"includes": ["**", "!dist", "!locales", "!styles.css"]
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			// Vendored third-party code (mantine-react-table). These patterns are
+			// intentional throughout the codebase, so silence them to keep the lint
+			// signal focused on our own future changes.
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "off",
+				"noGlobalIsNan": "off",
+				"useIterableCallbackReturn": "off"
+			},
+			"correctness": {
+				"noUnusedVariables": "off",
+				"noUnusedFunctionParameters": "off",
+				"useExhaustiveDependencies": "off",
+				"useHookAtTopLevel": "off"
+			},
+			"complexity": {
+				"useLiteralKeys": "off",
+				"noUselessFragments": "off"
+			},
+			"style": {
+				"noNonNullAssertion": "off",
+				"useNodejsImportProtocol": "off"
+			}
+		}
+	},
+	"overrides": [
+		{
+			// Mantine's PostCSS modules use non-standard syntax (@mixin, rem(),
+			// light-dark(), etc.) that Biome's CSS linter flags as errors.
+			"includes": ["**/*.css"],
+			"linter": { "enabled": false }
+		}
+	]
+}

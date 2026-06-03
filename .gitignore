@@ -1,0 +1,31 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# misc
+.DS_Store
+*.pem
+*.log
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Intellij-based IDEs
+.idea
+
+# NOTE: dist/, locales/ and styles.css are intentionally NOT ignored.
+# This package is consumed via a GitHub install (Option A), so the built
+# output is committed to the repo.
