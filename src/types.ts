@@ -422,7 +422,7 @@ export type MRT_ColumnDef<TData extends MRT_RowData, TValue = unknown> = {
 		renderedColumnIndex?: number;
 		renderedRowIndex?: number;
 		row: MRT_Row<TData>;
-		rowRef?: RefObject<HTMLTableRowElement>;
+		rowRef?: RefObject<HTMLTableRowElement | null>;
 		table: MRT_TableInstance<TData>;
 	}) => ReactNode;
 	/**

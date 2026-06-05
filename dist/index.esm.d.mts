@@ -1,5 +1,5 @@
 import * as react from 'react';
-import { MutableRefObject, HTMLProps, ReactNode, RefObject, Dispatch, SetStateAction, DragEventHandler, MouseEvent, ChangeEvent } from 'react';
+import { MutableRefObject, HTMLProps, ReactNode, RefObject, Dispatch, SetStateAction, DragEventHandler, MouseEvent, ChangeEvent, JSX } from 'react';
 import { ActionIconProps, UnstyledButtonProps, SelectProps, TextInputProps, AutocompleteProps, CheckboxProps, MultiSelectProps, RangeSliderProps, TableTdProps, TableThProps, BoxProps, ModalProps, HighlightProps, LoadingOverlayProps, PaginationProps, PaperProps, ProgressProps, RadioProps, SwitchProps, SkeletonProps, TableTbodyProps, TableTrProps, TableTfootProps, TableTheadProps, TableProps, BadgeProps, AlertProps, FlexProps, MenuProps, MantineTheme } from '@mantine/core';
 import { DateInputProps } from '@mantine/dates';
 import { Row, AggregationFn, DeepKeys, Cell, Header, FilterFn, SortingFn, ColumnDef, Column, HeaderGroup, TableState, OnChangeFn, TableOptions, Table, ColumnFiltersState, AccessorFn, DeepValue, ColumnOrderState, ColumnPinningState, ColumnSizingInfoState, ColumnSizingState, ExpandedState, GroupingState, PaginationState, RowSelectionState, SortingState, Updater, VisibilityState, RowPinningPosition, Renderable } from '@tanstack/react-table';
@@ -395,7 +395,7 @@ type MRT_ColumnDef<TData extends MRT_RowData, TValue = unknown> = {
         renderedColumnIndex?: number;
         renderedRowIndex?: number;
         row: MRT_Row<TData>;
-        rowRef?: RefObject<HTMLTableRowElement>;
+        rowRef?: RefObject<HTMLTableRowElement | null>;
         table: MRT_TableInstance<TData>;
     }) => ReactNode;
     /**
@@ -1030,7 +1030,7 @@ interface Props$R<TData extends MRT_RowData, TValue = MRT_CellValue> extends Tab
     numRows?: number;
     renderedColumnIndex?: number;
     renderedRowIndex?: number;
-    rowRef: RefObject<HTMLTableRowElement>;
+    rowRef: RefObject<HTMLTableRowElement | null>;
     table: MRT_TableInstance<TData>;
     virtualCell?: MRT_VirtualItem;
 }
@@ -1067,7 +1067,7 @@ declare const Memo_MRT_TableBodyRow: typeof MRT_TableBodyRow;
 
 interface Props$N<TData extends MRT_RowData> extends ActionIconProps {
     row: MRT_Row<TData>;
-    rowRef: RefObject<HTMLTableRowElement>;
+    rowRef: RefObject<HTMLTableRowElement | null>;
     table: MRT_TableInstance<TData>;
 }
 declare const MRT_TableBodyRowGrabHandle: <TData extends MRT_RowData>({ row, rowRef, table, ...rest }: Props$N<TData>) => react.JSX.Element;
@@ -1079,7 +1079,7 @@ interface Props$M<TData extends MRT_RowData> extends ActionIconProps {
 declare const MRT_TableBodyRowPinButton: <TData extends MRT_RowData>({ row, table, ...rest }: Props$M<TData>) => react.JSX.Element | null;
 
 interface Props$L<TData extends MRT_RowData> extends TableTdProps {
-    parentRowRef: RefObject<HTMLTableRowElement>;
+    parentRowRef: RefObject<HTMLTableRowElement | null>;
     renderedRowIndex?: number;
     row: MRT_Row<TData>;
     rowVirtualizer?: MRT_RowVirtualizer;
@@ -1251,7 +1251,7 @@ interface PropsMultiSelect<TData extends MRT_RowData, TValue = MRT_CellValue> ex
     cell: MRT_Cell<TData, TValue>;
     table: MRT_TableInstance<TData>;
 }
-declare const MRT_EditCellTextInput: <TData extends MRT_RowData>({ cell, table, ...rest }: PropsMultiSelect<TData> | PropsSelect<TData> | PropsTextInput<TData>) => string | number | boolean | Iterable<react.ReactNode> | react.JSX.Element | null | undefined;
+declare const MRT_EditCellTextInput: <TData extends MRT_RowData>({ cell, table, ...rest }: PropsMultiSelect<TData> | PropsSelect<TData> | PropsTextInput<TData>) => string | number | bigint | boolean | Iterable<react.ReactNode> | Promise<string | number | bigint | boolean | react.ReactPortal | react.ReactElement<unknown, string | react.JSXElementConstructor<any>> | Iterable<react.ReactNode> | null | undefined> | react.JSX.Element | null | undefined;
 
 interface Props$m<TData extends MRT_RowData, TValue = MRT_CellValue> extends CheckboxProps {
     column: MRT_Column<TData, TValue>;

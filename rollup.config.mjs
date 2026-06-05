@@ -44,6 +44,7 @@ export default [
 		plugins: [
 			typescript({
 				rootDir: "./src",
+				declarationDir: "./dist/types",
 			}),
 			postcss({
 				extract: true,

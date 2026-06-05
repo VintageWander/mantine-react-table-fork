@@ -14,7 +14,7 @@ import { MRT_EditCellTextInput } from "../inputs/MRT_EditCellTextInput";
 import classes from "./MRT_TableDetailPanel.module.css";
 
 interface Props<TData extends MRT_RowData> extends TableTdProps {
-	parentRowRef: RefObject<HTMLTableRowElement>;
+	parentRowRef: RefObject<HTMLTableRowElement | null>;
 	renderedRowIndex?: number;
 	row: MRT_Row<TData>;
 	rowVirtualizer?: MRT_RowVirtualizer;

@@ -3073,8 +3073,8 @@ const useMRT_Effects = (table) => {
     const totalColumnCount = table.options.columns.length;
     const totalRowCount = rowCount ?? getPrePaginationRowModel().rows.length;
     const rerender = useReducer(() => ({}), {})[1];
-    const initialBodyHeight = useRef();
-    const previousTop = useRef();
+    const initialBodyHeight = useRef(undefined);
+    const previousTop = useRef(undefined);
     useEffect(() => {
         if (typeof window !== "undefined") {
             initialBodyHeight.current = document.body.style.height;

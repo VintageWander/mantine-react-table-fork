@@ -3,7 +3,7 @@ import {
 	flexRender as _flexRender,
 	type Renderable,
 } from "@tanstack/react-table";
-import type { ReactNode } from "react";
+import type { JSX, ReactNode } from "react";
 
 import type {
 	MRT_ColumnHelper,
