@@ -280,27 +280,15 @@
 	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"] {
 				left: calc(var(--mrt-table-cell-left, 0) * 1px);
 			}
-	/* Outward shadow lives on the cell itself: the cell has overflow: hidden,
-				   which would clip a shadow drawn on ::before. */
 	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
-					box-shadow: 6px 0 6px -6px
-						color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+					border-right: 1px solid var(--table-border-color);
 				}
-	[data-mantine-color-scheme='dark'] .MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
-					box-shadow: 6px 0 6px -6px
-						color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
-}
 	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"] {
 				right: calc(var(--mrt-table-cell-right, 0) * 1px);
 			}
 	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
-					box-shadow: -6px 0 6px -6px
-						color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+					border-left: 1px solid var(--table-border-color);
 				}
-	[data-mantine-color-scheme='dark'] .MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
-					box-shadow: -6px 0 6px -6px
-						color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
-}
 	/* row pinning styles */
 	.MRT_TableBodyRow-module_root__2c3D4[data-row-pinned] {
 		background-color: var(
@@ -617,28 +605,16 @@
 	}
 
 	.MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="left"][data-last-left-pinned] {
-			box-shadow: 6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+			border-right: 1px solid var(--table-border-color);
 		}
-
-	[data-mantine-color-scheme='dark'] .MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="left"][data-last-left-pinned] {
-			box-shadow: 6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
-}
 
 	.MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="right"] {
 		right: calc(var(--mrt-table-cell-right, 0) * 1px);
 	}
 
 	.MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="right"][data-first-right-pinned] {
-			box-shadow: -6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+			border-left: 1px solid var(--table-border-color);
 		}
-
-	[data-mantine-color-scheme='dark'] .MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="right"][data-first-right-pinned] {
-			box-shadow: -6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
-}
 
 .MRT_TableFooterRow-module_root__EuoPr {
 	width: 100%;
@@ -777,28 +753,16 @@
 		}
 
 	.MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
-				box-shadow: 6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+				border-right: 1px solid var(--table-border-color);
 			}
-
-	[data-mantine-color-scheme='dark'] .MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
-				box-shadow: 6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
-}
 
 	.MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="right"] {
 			right: calc(var(--mrt-table-cell-right, 0) * 1px);
 		}
 
 	.MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
-				box-shadow: -6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+				border-left: 1px solid var(--table-border-color);
 			}
-
-	[data-mantine-color-scheme='dark'] .MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
-				box-shadow: -6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
-}
 
 	.MRT_TableHeadCell-module_root__6y50a[data-resizing][data-resizing="ltr"] {
 			border-right: var(--resize-thickness) solid var(--resize-border-color);
