@@ -265,7 +265,6 @@
 					}
 	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned] {
 			background-color: var(--mrt-pinned-column-background-color);
-			opacity: 0.97;
 			position: sticky;
 			z-index: 1;
 		}
@@ -281,28 +280,26 @@
 	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"] {
 				left: calc(var(--mrt-table-cell-left, 0) * 1px);
 			}
-	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"][data-last-left-pinned]::before {
-						box-shadow: -6px 0 6px -6px
-							color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%)
-							inset;
-					}
-	[data-mantine-color-scheme='dark'] .MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"][data-last-left-pinned]::before {
-						box-shadow: -6px 0 6px -6px
-							color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%)
-							inset;
+	/* Outward shadow lives on the cell itself: the cell has overflow: hidden,
+				   which would clip a shadow drawn on ::before. */
+	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
+					box-shadow: 6px 0 6px -6px
+						color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+				}
+	[data-mantine-color-scheme='dark'] .MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
+					box-shadow: 6px 0 6px -6px
+						color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
 }
 	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"] {
 				right: calc(var(--mrt-table-cell-right, 0) * 1px);
 			}
-	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"][data-first-right-pinned]::before {
-						box-shadow: 6px 0 6px -6px
-							color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%)
-							inset;
-					}
-	[data-mantine-color-scheme='dark'] .MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"][data-first-right-pinned]::before {
-						box-shadow: 6px 0 6px -6px
-							color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%)
-							inset;
+	.MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
+					box-shadow: -6px 0 6px -6px
+						color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
+				}
+	[data-mantine-color-scheme='dark'] .MRT_TableBodyRow-module_root__2c3D4 td[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
+					box-shadow: -6px 0 6px -6px
+						color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
 }
 	/* row pinning styles */
 	.MRT_TableBodyRow-module_root__2c3D4[data-row-pinned] {
@@ -620,15 +617,13 @@
 	}
 
 	.MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="left"][data-last-left-pinned] {
-			box-shadow: -6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%)
-				inset;
+			box-shadow: 6px 0 6px -6px
+				color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
 		}
 
 	[data-mantine-color-scheme='dark'] .MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="left"][data-last-left-pinned] {
-			box-shadow: -6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%)
-				inset;
+			box-shadow: 6px 0 6px -6px
+				color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
 }
 
 	.MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="right"] {
@@ -636,15 +631,13 @@
 	}
 
 	.MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="right"][data-first-right-pinned] {
-			box-shadow: 6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%)
-				inset;
+			box-shadow: -6px 0 6px -6px
+				color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
 		}
 
 	[data-mantine-color-scheme='dark'] .MRT_TableFooterCell-module_root__d8Scs[data-column-pinned="right"][data-first-right-pinned] {
-			box-shadow: 6px 0 6px -6px
-				color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%)
-				inset;
+			box-shadow: -6px 0 6px -6px
+				color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
 }
 
 .MRT_TableFooterRow-module_root__EuoPr {
@@ -775,7 +768,6 @@
 
 	.MRT_TableHeadCell-module_root__6y50a[data-column-pinned] {
 		background-color: var(--mrt-base-background-color);
-		opacity: 0.97;
 		position: sticky;
 		z-index: 4;
 	}
@@ -785,15 +777,13 @@
 		}
 
 	.MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
-				box-shadow: -6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%)
-					inset;
+				box-shadow: 6px 0 6px -6px
+					color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
 			}
 
 	[data-mantine-color-scheme='dark'] .MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="left"][data-last-left-pinned] {
-				box-shadow: -6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%)
-					inset;
+				box-shadow: 6px 0 6px -6px
+					color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
 }
 
 	.MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="right"] {
@@ -801,15 +791,13 @@
 		}
 
 	.MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
-				box-shadow: 6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%)
-					inset;
+				box-shadow: -6px 0 6px -6px
+					color-mix(in srgb, var(--mantine-color-gray-outline), transparent 50%);
 			}
 
 	[data-mantine-color-scheme='dark'] .MRT_TableHeadCell-module_root__6y50a[data-column-pinned][data-column-pinned="right"][data-first-right-pinned] {
-				box-shadow: 6px 0 6px -6px
-					color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%)
-					inset;
+				box-shadow: -6px 0 6px -6px
+					color-mix(in srgb, var(--mantine-color-dark-outline), transparent 50%);
 }
 
 	.MRT_TableHeadCell-module_root__6y50a[data-resizing][data-resizing="ltr"] {

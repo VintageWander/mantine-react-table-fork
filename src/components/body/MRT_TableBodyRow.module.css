@@ -52,7 +52,6 @@
 	td {
 		&[data-column-pinned] {
 			background-color: var(--mrt-pinned-column-background-color);
-			opacity: 0.97;
 			position: sticky;
 			z-index: 1;
 
@@ -68,35 +67,31 @@
 
 			&[data-column-pinned="left"] {
 				left: calc(var(--mrt-table-cell-left, 0) * 1px);
+				/* Outward shadow lives on the cell itself: the cell has overflow: hidden,
+				   which would clip a shadow drawn on ::before. */
 				&[data-last-left-pinned] {
-					&::before {
-						box-shadow: -6px 0 6px -6px
-							alpha(
-								light-dark(
-									var(--mantine-color-gray-outline),
-									var(--mantine-color-dark-outline)
-								),
-								0.5
-							)
-							inset;
-					}
+					box-shadow: 6px 0 6px -6px
+						alpha(
+							light-dark(
+								var(--mantine-color-gray-outline),
+								var(--mantine-color-dark-outline)
+							),
+							0.5
+						);
 				}
 			}
 
 			&[data-column-pinned="right"] {
 				right: calc(var(--mrt-table-cell-right, 0) * 1px);
 				&[data-first-right-pinned] {
-					&::before {
-						box-shadow: 6px 0 6px -6px
-							alpha(
-								light-dark(
-									var(--mantine-color-gray-outline),
-									var(--mantine-color-dark-outline)
-								),
-								0.5
-							)
-							inset;
-					}
+					box-shadow: -6px 0 6px -6px
+						alpha(
+							light-dark(
+								var(--mantine-color-gray-outline),
+								var(--mantine-color-dark-outline)
+							),
+							0.5
+						);
 				}
 			}
 		}
